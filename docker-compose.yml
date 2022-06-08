@@ -15,10 +15,6 @@ services:
             #- /home/user/docker-compose-ui/demo-projects:/home/user/docker-compose-ui/demo-projects
     web_console:
         image: bitbull/docker-exec-web-console
-        labels:
-            shipyard.route: '/'
-        ports:
-        - 8080:80
         environment:
         - 'CONTEXT_PATH=/web-console/'
         read_only: true
@@ -27,6 +23,8 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
     nginx:
         image: nginx:alpine
+        labels:
+            shipyard.route: '/'
         ports:
         - 8080:80
         read_only: true
