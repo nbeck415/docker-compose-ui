@@ -10,6 +10,8 @@ RUN apk add -U --no-cache git
 COPY ./requirements.txt /app/requirements.txt
 RUN virtualenv /env && /env/bin/pip install --no-cache-dir -r /app/requirements.txt
 
+RUN mkdir /logs
+
 COPY . /app
 
 VOLUME ["/opt/docker-compose-projects"]
