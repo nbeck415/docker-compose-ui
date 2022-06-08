@@ -3,6 +3,8 @@ version: "2"
 services:
     docker_compose_ui:
         restart: always
+        ports: 
+        - 5000
         image: francescou/docker-compose-ui:1.13.0
         container_name: docker_compose_ui
         hostname: docker_compose_ui
