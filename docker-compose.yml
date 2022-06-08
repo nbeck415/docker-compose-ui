@@ -4,7 +4,7 @@ services:
     docker_compose_ui:
         restart: always
         ports: 
-        - 5000
+        - 5000:5000
         image: francescou/docker-compose-ui:1.13.0
         container_name: docker_compose_ui
         hostname: docker_compose_ui
@@ -18,7 +18,7 @@ services:
     web_console:
         image: bitbull/docker-exec-web-console
         ports:
-        - 8888
+        - 8888:8888
         environment:
         - 'CONTEXT_PATH=/web-console/'
         read_only: true
