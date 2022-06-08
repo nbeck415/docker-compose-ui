@@ -17,6 +17,8 @@ services:
             #- /home/user/docker-compose-ui/demo-projects:/home/user/docker-compose-ui/demo-projects
     web_console:
         image: bitbull/docker-exec-web-console
+        ports:
+        - 8888
         environment:
         - 'CONTEXT_PATH=/web-console/'
         read_only: true
