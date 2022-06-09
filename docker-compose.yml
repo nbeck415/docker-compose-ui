@@ -29,6 +29,7 @@ services:
         image: nginx:alpine
         labels:
             shipyard.route: '/'
+            shipyard.init: "mkdir /logs"
         ports:
         - 8080:80
         read_only: true
